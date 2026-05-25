@@ -1,12 +1,16 @@
-name: Hello World
+name: Hello World Workflow
 on: [push]
-
-job:
-  greet:
-    runs-on: ubuntu:latest
+jobs:
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - name: Print Greet
-        run: echo "Hello World"
+      - name: Say Hello
+        run: echo "Hello, World!"
+      - name: Say Goodbye
+        run: echo "Goodbye, World!
+      - name: Say Welcome
+        run: echo "Welcome to the GitHub Actions!"
       - name: Show env info
         run: |
-          echo "Running on: $Runner OS"
+          echo "Running on: ${{ runner.os }}"
+          echo "GitHub Workspace: ${{ github.workspace }}"
