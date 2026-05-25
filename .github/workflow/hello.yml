@@ -1,0 +1,12 @@
+name: Hello World
+on: [push]
+
+job:
+  greet:
+    runs-on: ubuntu:latest
+    steps:
+      - name: Print Greet
+        run: echo "Hello World"
+      - name: Show env info
+        run: |
+          echo "Running on: $Runner OS"
